@@ -100,4 +100,4 @@ Care-Jai/
 
 ---
 
-*Built with 💛 for Thai elderly care*
+*Built with 💛 Group 8*
