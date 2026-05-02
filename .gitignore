@@ -1,0 +1,12 @@
+stitch_care_jai_caregiver_dashboard.zip
+stitch_care_jai_caregiver_dashboard/
+node_modules/
+__pycache__/
+*.py[cod]
+.env
+.venv
+venv/
+dist/
+.vite/
+.DS_Store
+Thumbs.db

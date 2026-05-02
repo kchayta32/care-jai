@@ -43,4 +43,4 @@ mobile-app/
 ```
 
 ---
-*Built with 💛 Group 8*
+*Built with 💛 for Thai elderly care*
