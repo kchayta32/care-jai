@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Care-Jai Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "secondary": "#3b6934",
+                        "tertiary": "#415ba4",
+                        "surface-bright": "#fdf8f6",
+                        "surface-dim": "#ddd9d6",
+                        "surface-variant": "#e6e2df",
+                        "secondary-container": "#b9eeab",
+                        "primary": "#735c00",
+                        "on-tertiary-container": "#254188",
+                        "secondary-fixed-dim": "#a1d494",
+                        "primary-fixed": "#ffe088",
+                        "on-tertiary-fixed-variant": "#27438a",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#d0c5af",
+                        "on-tertiary-fixed": "#00174b",
+                        "secondary-fixed": "#bcf0ae",
+                        "on-primary-fixed": "#241a00",
+                        "outline": "#7f7663",
+                        "surface-tint": "#735c00",
+                        "on-secondary-container": "#3f6d38",
+                        "inverse-on-surface": "#f4f0ed",
+                        "on-primary-container": "#554300",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fdf8f6",
+                        "on-surface-variant": "#4d4635",
+                        "surface-container-highest": "#e6e2df",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#dbe1ff",
+                        "surface-container": "#f1edea",
+                        "tertiary-container": "#97b0ff",
+                        "surface-container-high": "#ece7e4",
+                        "background": "#fdf8f6",
+                        "primary-container": "#d4af37",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-surface": "#1c1b1a",
+                        "on-secondary-fixed": "#002201",
+                        "inverse-primary": "#e9c349",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#23501e",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "surface-container-low": "#f7f3f0",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#31302e",
+                        "on-background": "#1c1b1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "unit": "4px",
+                        "stack-sm": "8px",
+                        "gutter": "12px",
+                        "margin-page": "20px"
+                    },
+                    "fontFamily": {
+                        "display": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-1": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-2": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "body-lg": ["17px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-1": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-2": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "caption": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen">
+<!-- TopAppBar (JSON Sourced) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-5 py-3 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-100 dark:border-zinc-800 shadow-[0_4px_12px_rgba(0,0,0,0.04)] font-['Inter'] antialiased tracking-tight">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-yellow-600 dark:text-yellow-500" data-icon="spa" data-weight="fill">spa</span>
+<span class="text-lg font-bold text-yellow-700 dark:text-yellow-500">Care-Jai</span>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-variant flex items-center justify-center hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors active:scale-95 duration-200">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close-up profile photo of a smiling young woman with warm lighting, serving as a user avatar. The image has a welcoming, optimistic tone consistent with modern humanist design, using soft natural light to highlight her approachable expression against a slightly blurred, bright background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCWWlQLXuVF-wSQn43LnkQ9ERQBdnlOvX_DXEVUJwipUsGuYH-KAi43kIcb6VzrbyurZ_oH4oABU0bitGC0NaOZkRBGNmkH6xCm46POd7u_nLL5DtWlbe4lYYfhXn8sOpky6EcwjVB4VZ03pxeQl_X-silMXeuzXmLB0Wlvoiy_5ZQjiSzJyZ_Gr9FH7OqP-nvG9INrLtt9t-ln0pVaVD8r1Zrt4rcI_0nECcrEkXVkrMdC7IaYm74j6LYS5uNz6u0sUoC8Ez7BA"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-24 px-margin-page flex flex-col gap-stack-lg max-w-3xl mx-auto">
+<!-- Welcome Context -->
+<section class="mt-4">
+<h1 class="font-display text-display text-on-background">สวัสดีตอนเช้า,</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">นี่คืออัพเดทล่าสุดเกี่ยวกับการดูแลคุณปู่ค่ะ</p>
+</section>
+<!-- Proactive AI Alert Card -->
+<section class="bg-primary-fixed rounded-xl p-5 shadow-[0_8px_24px_rgba(115,92,0,0.12)] border border-primary-fixed-dim/30 flex flex-col gap-stack-md relative overflow-hidden">
+<!-- Glow effect -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-white/40 blur-3xl rounded-full pointer-events-none"></div>
+<div class="flex items-start gap-4 relative z-10">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="medication" data-weight="fill">medication</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-[16px]" data-icon="sparkles" data-weight="fill">colors_spark</span>
+<span class="font-label-caps text-label-caps text-primary uppercase">AI ตรวจพบความผิดปกติ</span>
+</div>
+<h2 class="font-headline-2 text-headline-2 text-on-primary-fixed">ลืมกินยาเช้า</h2>
+<p class="font-body-md text-body-md text-on-primary-fixed-variant mt-1">เซ็นเซอร์ตรวจพบว่ากล่องยายังไม่ถูกเปิดตามเวลาปกติ 08:00 น. ต้องการตรวจสอบไหมคะ?</p>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex flex-row flex-wrap items-center gap-3 mt-2 relative z-10">
+<button class="h-12 px-6 rounded-xl bg-primary text-on-primary font-headline-1 text-[15px] shadow-sm flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]" data-icon="call">call</span>
+                    โทรเลย
+                </button>
+<button class="h-12 px-6 rounded-xl bg-surface/50 text-on-primary-fixed-variant font-headline-1 text-[15px] border border-primary/20 flex items-center justify-center gap-2 active:scale-95 transition-transform hover:bg-surface/80">
+<span class="material-symbols-outlined text-[20px]" data-icon="schedule">ตาราง</span>
+                    เตือนทีหลัง
+                </button>
+<button class="h-12 px-4 rounded-xl text-primary font-headline-1 text-[15px] flex items-center justify-center active:scale-95 transition-transform hover:bg-primary/5">
+                    ปิด
+                </button>
+</div>
+</section><section class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-surface-variant flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-1 text-headline-1 text-on-surface">สัญญาณชีพประจำวัน</h3>
+<span class="font-caption text-caption text-primary">ดูรายละเอียด</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<!-- Heart Rate -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-error">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite" data-weight="fill">favorite</span>
+<span class="text-[11px] font-label-caps uppercase tracking-wider">อัตราหัวใจ</span>
+</div>
+<div class="mt-1">
+<span class="text-[20px] font-bold text-on-surface">72</span>
+<span class="text-[13px] text-on-surface-variant ml-0.5">bpm</span>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+<span class="text-[11px] text-on-surface-variant font-medium">ปกติ</span>
+</div>
+</div>
+<!-- SpO2 -->
+<div class="flex flex-col gap-1 border-l border-surface-variant/50 pl-3">
+<div class="flex items-center gap-1.5 text-tertiary">
+<span class="material-symbols-outlined text-[18px]" data-icon="air">air</span>
+<span class="text-[11px] font-label-caps uppercase tracking-wider">ออกซิเจนในเลือด</span>
+</div>
+<div class="mt-1">
+<span class="text-[20px] font-bold text-on-surface">98</span>
+<span class="text-[13px] text-on-surface-variant ml-0.5">%</span>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+<span class="text-[11px] text-on-surface-variant font-medium">แข็งแรง</span>
+</div>
+</div>
+<!-- Sleep -->
+<div class="flex flex-col gap-1 border-l border-surface-variant/50 pl-3">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="bedtime" data-weight="fill">bedtime</span>
+<span class="text-[11px] font-label-caps uppercase tracking-wider">การนอน</span>
+</div>
+<div class="mt-1">
+<span class="text-[20px] font-bold text-on-surface">7h 20m</span>
+</div>
+<div class="flex items-center gap-1 mt-1">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+<span class="text-[11px] text-on-surface-variant font-medium">ดี</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Health & Mood Trend Card -->
+<section class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-surface-variant flex flex-col gap-stack-md">
+<div class="flex justify-between items-center">
+<div>
+<h3 class="font-headline-1 text-headline-1 text-on-surface">แนวโน้มสุขภาพ & อารมณ์</h3>
+<p class="font-caption text-caption text-on-surface-variant">7 วันล่าสุด (คงที่)</p>
+</div>
+<div class="bg-secondary-container px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-on-secondary-container text-[14px]" data-icon="trending_up">trending_up</span>
+<span class="font-label-caps text-label-caps text-on-secondary-container uppercase">ดีขึ้น</span>
+</div>
+</div>
+<!-- Graph Area -->
+<div class="h-40 w-full mt-2 relative flex items-end">
+<!-- Background Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between pb-6">
+<div class="w-full border-b border-surface-variant/50 border-dashed"></div>
+<div class="w-full border-b border-surface-variant/50 border-dashed"></div>
+<div class="w-full border-b border-surface-variant/50 border-dashed"></div>
+</div>
+<!-- Stylized SVG Line Graph -->
+<svg class="w-full h-full absolute inset-0 z-10" preserveaspectratio="none" viewbox="0 0 100 40">
+<!-- Subtle gradient fill under the line -->
+<defs>
+<lineargradient id="greenGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#bcf0ae" stop-opacity="0.5"></stop>
+<stop offset="100%" stop-color="#bcf0ae" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,35 Q15,35 25,25 T50,20 T75,10 T100,5 L100,40 L0,40 Z" fill="url(#greenGradient)"></path>
+<!-- The trend line -->
+<path d="M0,35 Q15,35 25,25 T50,20 T75,10 T100,5" fill="none" stroke="#3b6934" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<!-- Data points -->
+<circle cx="25" cy="25" fill="#ffffff" r="1.5" stroke="#3b6934" stroke-width="1"></circle>
+<circle cx="50" cy="20" fill="#ffffff" r="1.5" stroke="#3b6934" stroke-width="1"></circle>
+<circle cx="75" cy="10" fill="#ffffff" r="1.5" stroke="#3b6934" stroke-width="1"></circle>
+<circle cx="100" cy="5" fill="#ffffff" r="1.5" stroke="#3b6934" stroke-width="1"></circle>
+</svg>
+<!-- X-Axis Labels -->
+<div class="w-full flex justify-between absolute bottom-0 text-on-surface-variant font-caption text-[11px]">
+<span>จ.</span>
+<span>พ.</span>
+<span>ศ.</span>
+<span>วันนี้</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (JSON Sourced) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe pt-2 bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-800 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] rounded-t-xl font-['Inter'] text-[12px] font-medium">
+<!-- Active Tab: Home -->
+<button class="flex flex-col items-center justify-center text-yellow-600 dark:text-yellow-500 bg-yellow-50/50 dark:bg-yellow-900/20 rounded-xl px-3 py-1 hover:text-yellow-700 dark:hover:text-yellow-400 active:scale-90 transition-all duration-150 ease-out">
+<span class="material-symbols-outlined mb-1" data-icon="home" data-weight="fill">หน้าแรก</span>
+<span>หน้าแรก</span>
+</button>
+<!-- Inactive Tabs -->
+<button class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-3 py-1 hover:text-yellow-700 dark:hover:text-yellow-400 active:scale-90 transition-all duration-150 ease-out">
+<span class="material-symbols-outlined mb-1" data-icon="monitor_heart">monitor_heart</span>
+<span>สุขภาพ</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-3 py-1 hover:text-yellow-700 dark:hover:text-yellow-400 active:scale-90 transition-all duration-150 ease-out">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_today">calendar_today</span>
+<span>ตาราง</span>
+</button>
+<button class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-500 px-3 py-1 hover:text-yellow-700 dark:hover:text-yellow-400 active:scale-90 transition-all duration-150 ease-out">
+<span class="material-symbols-outlined mb-1" data-icon="settings">ตั้งค่า</span>
+<span>ตั้งค่า</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Care-Jai แอปมือถือ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#735c00","on-primary": "#ffffff","primary-container": "#d4af37",
+        "on-primary-container": "#554300","secondary": "#3b6934","on-secondary": "#ffffff",
+        "secondary-container": "#b9eeab","on-secondary-container": "#3f6d38",
+        "tertiary": "#415ba4","tertiary-container": "#97b0ff","tertiary-fixed": "#dbe1ff",
+        "on-tertiary-fixed": "#00174b","error": "#ba1a1a","error-container": "#ffdad6",
+        "on-error-container": "#93000a","background": "#fdf8f6","on-surface": "#1c1b1a",
+        "on-surface-variant": "#4d4635","surface": "#fdf8f6","surface-variant": "#e6e2df",
+        "surface-container": "#f1edea","surface-container-high": "#ece7e4",
+        "surface-container-lowest": "#ffffff","primary-fixed": "#ffe088",
+        "primary-fixed-dim": "#e9c349","on-primary-fixed": "#241a00",
+        "on-primary-fixed-variant": "#574500","secondary-fixed": "#bcf0ae",
+        "secondary-fixed-dim": "#a1d494","inverse-primary": "#e9c349",
+        "surface-container-low": "#f7f3f0","outline": "#7f7663",
+        "outline-variant": "#d0c5af"
+      },
+      fontFamily: { "sans": ["Noto Sans Thai","Inter","sans-serif"] }
+    }
+  }
+}
+</script>
+<style>
+body{min-height:100dvh;background:#fdf8f6;font-family:'Noto Sans Thai','Inter',sans-serif}
+.orb-gradient{background:radial-gradient(circle at 30% 30%,#fff 0%,#ffe088 40%,#d4af37 80%)}
+.orb-glow{box-shadow:0 0 60px rgba(212,175,55,0.4),inset 0 0 30px rgba(255,255,255,0.8)}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24}
+.tab-active{color:#735c00;background:rgba(255,224,136,0.3);border-radius:12px}
+.fade-in{animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse-ring{0%{transform:scale(1);opacity:0.5}100%{transform:scale(1.4);opacity:0}}
+.pulse-ring{animation:pulse-ring 1.5s ease infinite}
+.btn-press{transition:transform .15s}
+.btn-press:active{transform:scale(0.95)}
+</style>
+</head>
+<body class="text-on-surface antialiased">
+
+<!-- Role Switcher -->
+<div style="position:fixed;top:12px;right:12px;z-index:999;display:flex;gap:4px;background:#fff;padding:4px;border-radius:999px;box-shadow:0 4px 16px rgba(0,0,0,0.12);border:1px solid #e6e2df">
+<button onclick="switchView('caregiver')" id="btn-caregiver" class="px-3 py-1.5 rounded-full text-xs font-semibold transition-all bg-primary text-white">ผู้ดูแล</button>
+<button onclick="switchView('senior')" id="btn-senior" class="px-3 py-1.5 rounded-full text-xs font-semibold transition-all text-gray-500 hover:bg-gray-100">ผู้สูงอายุ</button>
+</div>
+
+<!-- ===== CAREGIVER VIEW ===== -->
+<div id="view-caregiver">
+<div class="max-w-md mx-auto px-5 pt-16 pb-28">
+
+<!-- Header -->
+<header class="flex justify-between items-center mb-8">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-lg" style="font-variation-settings:'FILL' 1">favorite</span>
+</div>
+<span class="text-xl font-bold text-primary">Care-Jai</span>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCWWlQLXuVF-wSQn43LnkQ9ERQBdnlOvX_DXEVUJwipUsGuYH-KAi43kIcb6VzrbyurZ_oH4oABU0bitGC0NaOZkRBGNmkH6xCm46POd7u_nLL5DtWlbe4lYYfhXn8sOpky6EcwjVB4VZ03pxeQl_X-silMXeuzXmLB0Wlvoiy_5ZQjiSzJyZ_Gr9FH7OqP-nvG9INrLtt9t-ln0pVaVD8r1Zrt4rcI_0nECcrEkXVkrMdC7IaYm74j6LYS5uNz6u0sUoC8Ez7BA" alt="ผู้ดูแล" class="w-full h-full object-cover"/>
+</div>
+</header>
+
+<!-- Welcome -->
+<section class="mb-6">
+<h1 class="text-3xl font-bold">สวัสดีตอนเช้า,</h1>
+<p class="text-on-surface-variant mt-1">นี่คืออัพเดทล่าสุดเกี่ยวกับการดูแลคุณปู่ค่ะ</p>
+</section>
+
+<!-- AI Alert -->
+<section class="bg-primary-fixed rounded-2xl p-5 shadow-lg border border-primary-fixed-dim/30 mb-6 relative overflow-hidden fade-in">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-white/40 blur-3xl rounded-full"></div>
+<div class="relative z-10 flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings:'FILL' 1">colors_spark</span>
+<span class="text-xs font-bold text-primary uppercase tracking-wider">AI ตรวจพบความผิดปกติ</span>
+</div>
+<h2 class="text-xl font-bold text-on-primary-fixed">ลืมกินยาเช้า</h2>
+<p class="text-sm text-on-primary-fixed-variant">เซ็นเซอร์ตรวจพบว่ากล่องยายังไม่ถูกเปิดตามเวลาปกติ 08:00 น. ต้องการตรวจสอบไหมคะ?</p>
+<div class="flex gap-3 mt-1">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-xl font-semibold flex items-center justify-center gap-2 btn-press">
+<span class="material-symbols-outlined text-lg">call</span> โทรเลย
+</button>
+<button class="flex-1 bg-white/50 text-on-primary-fixed-variant py-3 rounded-xl font-semibold border border-primary/20 btn-press">เตือนทีหลัง</button>
+</div>
+</div>
+</section>
+
+<!-- Vitals -->
+<section class="bg-white rounded-2xl p-5 shadow-sm border border-surface-variant mb-6 fade-in">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-bold">สัญญาณชีพประจำวัน</h3>
+<span class="text-sm text-primary font-medium">ดูรายละเอียด</span>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<div>
+<div class="flex items-center gap-1 text-red-500 mb-1"><span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1">favorite</span><span class="text-[10px] font-bold uppercase">หัวใจ</span></div>
+<div><span class="text-xl font-bold">72</span><span class="text-xs text-on-surface-variant ml-1">bpm</span></div>
+<div class="flex items-center gap-1 mt-1"><div class="w-1.5 h-1.5 rounded-full bg-secondary"></div><span class="text-[10px] text-on-surface-variant font-medium">ปกติ</span></div>
+</div>
+<div class="border-l border-surface-variant pl-3">
+<div class="flex items-center gap-1 text-tertiary mb-1"><span class="material-symbols-outlined text-base">air</span><span class="text-[10px] font-bold uppercase">SpO2</span></div>
+<div><span class="text-xl font-bold">98</span><span class="text-xs text-on-surface-variant ml-1">%</span></div>
+<div class="flex items-center gap-1 mt-1"><div class="w-1.5 h-1.5 rounded-full bg-secondary"></div><span class="text-[10px] text-on-surface-variant font-medium">แข็งแรง</span></div>
+</div>
+<div class="border-l border-surface-variant pl-3">
+<div class="flex items-center gap-1 text-secondary mb-1"><span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1">bedtime</span><span class="text-[10px] font-bold uppercase">นอน</span></div>
+<div><span class="text-xl font-bold">7h 20m</span></div>
+<div class="flex items-center gap-1 mt-1"><div class="w-1.5 h-1.5 rounded-full bg-secondary"></div><span class="text-[10px] text-on-surface-variant font-medium">ดี</span></div>
+</div>
+</div>
+</section>
+
+<!-- Health Trend -->
+<section class="bg-white rounded-2xl p-5 shadow-sm border border-surface-variant fade-in">
+<div class="flex justify-between items-center mb-4">
+<div>
+<h3 class="text-lg font-bold">แนวโน้มสุขภาพ & อารมณ์</h3>
+<p class="text-xs text-on-surface-variant">7 วันล่าสุด (คงที่)</p>
+</div>
+<div class="bg-secondary-container px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-on-secondary-container text-sm">trending_up</span>
+<span class="text-[10px] font-bold text-on-secondary-container uppercase">ดีขึ้น</span>
+</div>
+</div>
+<div class="h-32 w-full relative">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 40">
+<defs><linearGradient id="gg" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#bcf0ae" stop-opacity="0.5"/><stop offset="100%" stop-color="#bcf0ae" stop-opacity="0"/></linearGradient></defs>
+<path d="M0,35 Q15,35 25,25 T50,20 T75,10 T100,5 L100,40 L0,40 Z" fill="url(#gg)"/>
+<path d="M0,35 Q15,35 25,25 T50,20 T75,10 T100,5" fill="none" stroke="#3b6934" stroke-width="2" stroke-linecap="round"/>
+</svg>
+<div class="absolute bottom-0 w-full flex justify-between text-[10px] text-on-surface-variant">
+<span>จ.</span><span>พ.</span><span>ศ.</span><span>วันนี้</span>
+</div>
+</div>
+</section>
+</div>
+
+<!-- Nav -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/80 backdrop-blur-md border-t border-gray-100 py-3 px-6 flex justify-around items-center rounded-t-3xl z-50">
+<button class="flex flex-col items-center gap-1 text-primary"><div class="p-1 rounded-lg bg-primary/10"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">home</span></div><span class="text-[10px] font-medium">หน้าแรก</span></button>
+<button class="flex flex-col items-center gap-1 text-gray-400"><div class="p-1"><span class="material-symbols-outlined">monitor_heart</span></div><span class="text-[10px] font-medium">สุขภาพ</span></button>
+<button class="flex flex-col items-center gap-1 text-gray-400"><div class="p-1"><span class="material-symbols-outlined">calendar_today</span></div><span class="text-[10px] font-medium">ตาราง</span></button>
+<button class="flex flex-col items-center gap-1 text-gray-400"><div class="p-1"><span class="material-symbols-outlined">settings</span></div><span class="text-[10px] font-medium">ตั้งค่า</span></button>
+</nav>
+</div>
+
+<!-- ===== SENIOR VIEW ===== -->
+<div id="view-senior" style="display:none">
+<div class="max-w-md mx-auto px-5 pt-16 pb-28 flex flex-col min-h-screen">
+
+<header class="flex justify-between items-center mb-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQoOfXql_RiS3qfAd0lHC2fSM5P6A3xYVZz6WPsXljYLZ2ZxYGKA2pye-QQlL9c0wcaGrF0zt9zEI2XD3xkw0aib41RAcxNHrV8jCpJS9JNgrd42pD8ycQgENDUgJ4vimEFMtvWMLrhOD6yHSMn_x1ykytpm6iA7FzSDTS5ZnV1eipWQ-QYN6eDgZYr29KYa9GFEUYpJJ1lhDzk68k9Q2jZkXu0uN5E_VVZsfQ77vAfbwFgdwfAsu84bMq0E4CDOGWElNBbXcbww" alt="ผู้สูงอายุ" class="w-full h-full object-cover"/>
+</div>
+<h1 class="text-xl font-bold text-primary">Care-Jai</h1>
+</div>
+<button class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">emergency_share</span>
+</button>
+</header>
+
+<div class="flex-1 flex flex-col items-center justify-center gap-8">
+<div class="text-center">
+<h2 class="text-4xl font-bold mb-2">สวัสดีค่ะ,</h2>
+<p class="text-on-surface-variant text-lg">วันนี้รู้สึกอย่างไรบ้างคะ?</p>
+</div>
+
+<!-- AI Orb -->
+<div class="relative w-56 h-56 flex items-center justify-center my-4 cursor-pointer group" id="orbContainer" onclick="toggleOrb()">
+<div class="absolute inset-0 rounded-full bg-primary-fixed opacity-30 scale-110"></div>
+<div class="absolute inset-4 rounded-full bg-primary-fixed-dim opacity-50 scale-105"></div>
+<div id="orbPulse" class="absolute inset-0 rounded-full bg-primary-fixed opacity-0" style="display:none"></div>
+<div class="relative w-44 h-44 rounded-full orb-gradient orb-glow flex items-center justify-center z-10 transition-transform group-hover:scale-105 group-active:scale-95 duration-300">
+<span class="material-symbols-outlined text-6xl text-on-primary-container opacity-80">mic</span>
+</div>
+<div class="absolute top-4 right-4 z-20">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings:'FILL' 1">colors_spark</span>
+</div>
+</div>
+
+<!-- Quick Buttons -->
+<div class="w-full flex flex-col gap-3 px-2">
+<button onclick="showChat('สบายดีค่ะ วันนี้รู้สึกดีมากเลย')" class="w-full h-[68px] bg-secondary-fixed text-on-surface rounded-2xl flex items-center px-6 shadow-sm btn-press">
+<div class="w-11 h-11 rounded-full bg-white/40 flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings:'FILL' 1;color:#16a34a">sentiment_satisfied</span>
+</div>
+<span class="font-semibold text-lg">สบายดีค่ะ</span>
+</button>
+<button onclick="showChat('รู้สึกเหนื่อยนิดหน่อย อยากพักผ่อน')" class="w-full h-[68px] bg-surface-container-high text-on-surface rounded-2xl flex items-center px-6 shadow-sm btn-press">
+<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center mr-4 shadow-sm">
+<span class="material-symbols-outlined text-2xl text-on-surface-variant">bedtime</span>
+</div>
+<span class="font-semibold text-lg">เหนื่อยนิดหน่อย</span>
+</button>
+<button onclick="showChat('อยากโทรหาลูกหลานจัง')" class="w-full h-[68px] bg-tertiary-fixed text-on-tertiary-fixed rounded-2xl flex items-center px-6 shadow-sm btn-press border border-tertiary-container/30">
+<div class="w-11 h-11 rounded-full bg-white/50 flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-2xl text-tertiary">group</span>
+</div>
+<span class="font-semibold text-lg">โทรหาลูกหลาน</span>
+</button>
+</div>
+</div>
+
+<!-- Chat Overlay -->
+<div id="chatOverlay" style="display:none" class="fixed bottom-20 left-3 right-3 max-w-md mx-auto bg-white rounded-3xl shadow-2xl border border-gray-100 p-4 z-50 fade-in">
+<div class="flex justify-between items-center mb-3">
+<span class="font-semibold text-sm text-primary">💬 สนทนากับ AI</span>
+<button onclick="document.getElementById('chatOverlay').style.display='none'" class="text-gray-400 text-sm">✕</button>
+</div>
+<div id="chatMessages" class="h-40 overflow-y-auto space-y-2 mb-3"></div>
+<div class="flex gap-2">
+<input id="chatInput" class="flex-1 bg-gray-50 border border-gray-200 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-primary" placeholder="พิมพ์ข้อความ..." onkeypress="if(event.key==='Enter')sendChat()"/>
+<button onclick="sendChat()" class="bg-primary text-white p-2 rounded-full btn-press"><span class="material-symbols-outlined text-lg">send</span></button>
+</div>
+</div>
+
+<!-- Nav -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white/80 backdrop-blur-md border-t border-gray-100 py-3 px-6 flex justify-around items-center rounded-t-3xl z-40">
+<button class="flex flex-col items-center gap-1 text-primary"><div class="p-1 rounded-lg bg-primary/10"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">home</span></div><span class="text-[10px] font-medium">หน้าแรก</span></button>
+<button class="flex flex-col items-center gap-1 text-gray-400"><div class="p-1"><span class="material-symbols-outlined">spa</span></div><span class="text-[10px] font-medium">สุขภาพดี</span></button>
+<button class="flex flex-col items-center gap-1 text-gray-400"><div class="p-1"><span class="material-symbols-outlined">monitoring</span></div><span class="text-[10px] font-medium">สุขภาพ</span></button>
+<button class="flex flex-col items-center gap-1 text-gray-400"><div class="p-1"><span class="material-symbols-outlined">settings</span></div><span class="text-[10px] font-medium">ตั้งค่า</span></button>
+</nav>
+</div>
+</div>
+
+<script>
+function switchView(v){
+  document.getElementById('view-caregiver').style.display=v==='caregiver'?'block':'none';
+  document.getElementById('view-senior').style.display=v==='senior'?'block':'none';
+  document.getElementById('btn-caregiver').className='px-3 py-1.5 rounded-full text-xs font-semibold transition-all '+(v==='caregiver'?'bg-primary text-white':'text-gray-500 hover:bg-gray-100');
+  document.getElementById('btn-senior').className='px-3 py-1.5 rounded-full text-xs font-semibold transition-all '+(v==='senior'?'bg-primary text-white':'text-gray-500 hover:bg-gray-100');
+}
+
+const aiResponses={
+  'สบายดีค่ะ วันนี้รู้สึกดีมากเลย':'ดีใจจังค่ะที่คุณสบายดี! 😊 อย่าลืมกินยาตามเวลานะคะ วันนี้อากาศดี ลองออกไปเดินเล่นในสวนสักหน่อยก็ดีค่ะ',
+  'รู้สึกเหนื่อยนิดหน่อย อยากพักผ่อน':'ไม่เป็นไรค่ะ การพักผ่อนเป็นเรื่องสำคัญ 💤 ลองนอนพักสัก 20-30 นาทีนะคะ จะช่วยให้รู้สึกสดชื่นขึ้นค่ะ อยากให้แจ้งลูกหลานไหมคะ?',
+  'อยากโทรหาลูกหลานจัง':'แน่นอนค่ะ! 📞 กำลังเตรียมการโทรให้ค่ะ ลูกหลานจะได้ยินเสียงคุณแล้วดีใจแน่นอนค่ะ',
+};
+
+function showChat(msg){
+  const overlay=document.getElementById('chatOverlay');
+  const msgs=document.getElementById('chatMessages');
+  overlay.style.display='block';
+  msgs.innerHTML='';
+  addMsg(msg,'user');
+  setTimeout(()=>{
+    const resp=aiResponses[msg]||'สวัสดีค่ะ มีอะไรให้ช่วยไหมคะ? 🌸';
+    addMsg(resp,'ai');
+  },800);
+}
+
+function addMsg(text,role){
+  const msgs=document.getElementById('chatMessages');
+  const d=document.createElement('div');
+  d.className='flex '+(role==='user'?'justify-end':'justify-start');
+  d.innerHTML='<div class="max-w-[80%] px-4 py-2 rounded-2xl text-sm '+(role==='user'?'bg-primary text-white':'bg-gray-100 text-on-surface')+'">'+text+'</div>';
+  msgs.appendChild(d);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+function sendChat(){
+  const input=document.getElementById('chatInput');
+  if(!input.value.trim())return;
+  addMsg(input.value,'user');
+  const v=input.value;input.value='';
+  setTimeout(()=>addMsg('ขอบคุณที่บอกนะคะ 🌸 ดูแลสุขภาพด้วยนะคะ','ai'),600);
+}
+
+let orbActive=false;
+function toggleOrb(){
+  orbActive=!orbActive;
+  if(orbActive){
+    showChat('สวัสดีจ้า รู้สึกสบายดีนะ');
+    setTimeout(()=>{orbActive=false},2000);
+  }
+}
+</script>
+</body>
+</html>

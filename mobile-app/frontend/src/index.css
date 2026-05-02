@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fdf8f6;
+}
+
+.orb-gradient {
+  background: radial-gradient(circle at 30% 30%, #ffffff 0%, #ffe088 40%, #d4af37 80%);
+}
+
+.orb-glow {
+  box-shadow: 0 0 60px rgba(212, 175, 55, 0.4), inset 0 0 30px rgba(255, 255, 255, 0.8);
+}

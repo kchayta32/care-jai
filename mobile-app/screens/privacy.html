@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Care-Jai - Data Privacy &amp; Security</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#554300",
+                        "surface-tint": "#735c00",
+                        "inverse-primary": "#e9c349",
+                        "secondary": "#3b6934",
+                        "primary-fixed": "#ffe088",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-primary": "#ffffff",
+                        "background": "#fdf8f6",
+                        "on-surface": "#1c1b1a",
+                        "on-tertiary-container": "#254188",
+                        "surface-variant": "#e6e2df",
+                        "primary-container": "#d4af37",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#415ba4",
+                        "surface-container": "#f1edea",
+                        "surface-bright": "#fdf8f6",
+                        "tertiary-fixed": "#dbe1ff",
+                        "on-surface-variant": "#4d4635",
+                        "surface-container-highest": "#e6e2df",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#bcf0ae",
+                        "inverse-surface": "#31302e",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#a1d494",
+                        "on-tertiary-fixed": "#00174b",
+                        "primary": "#735c00",
+                        "secondary-container": "#b9eeab",
+                        "on-tertiary-fixed-variant": "#27438a",
+                        "on-background": "#1c1b1a",
+                        "inverse-on-surface": "#f4f0ed",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#3f6d38",
+                        "surface-dim": "#ddd9d6",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#7f7663",
+                        "surface-container-high": "#ece7e4",
+                        "tertiary-container": "#97b0ff",
+                        "on-primary-fixed": "#241a00",
+                        "surface": "#fdf8f6",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "on-secondary-fixed": "#002201",
+                        "primary-fixed-dim": "#e9c349",
+                        "surface-container-low": "#f7f3f0",
+                        "outline-variant": "#d0c5af",
+                        "on-secondary-fixed-variant": "#23501e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "gutter": "12px",
+                        "stack-lg": "24px",
+                        "unit": "4px",
+                        "margin-page": "20px"
+                    },
+                    "fontFamily": {
+                        "display": ["Inter"],
+                        "headline-2": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-1": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-2": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "caption": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-1": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["17px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .fluent-shadow {
+            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.04);
+        }
+        .fluent-glow {
+            box-shadow: 0 0 24px 0 rgba(59, 105, 52, 0.2);
+        }
+        /* Custom Toggle Switch for Fluent UI feel */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #3b6934;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #3b6934;
+        }
+        .toggle-checkbox:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 105, 52, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 font-body-md">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-5 py-3 docked full-width top-0 z-50 bg-white/90 dark:bg-gray-900/90 border-b border-gray-100 dark:border-gray-800 flat no-shadows sticky">
+<div class="flex items-center gap-3">
+<button class="tap-highlight-none active:opacity-70 text-on-surface hover:opacity-80 transition-opacity flex items-center justify-center p-2 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-sans text-lg font-semibold tracking-tight text-yellow-600 dark:text-yellow-500">Care-Jai</h1>
+</div>
+<button class="tap-highlight-none active:opacity-70 text-on-surface hover:opacity-80 transition-opacity flex items-center justify-center p-2 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">emergency_share</span>
+</button>
+</header>
+<main class="px-margin-page pt-stack-lg max-w-md mx-auto">
+<!-- Hero Section: Sovereign Data Protection -->
+<section class="flex flex-col items-center justify-center mb-stack-lg text-center">
+<div class="w-24 h-24 rounded-full bg-secondary-container flex items-center justify-center mb-stack-md fluent-glow relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent z-10"></div>
+<span class="material-symbols-outlined text-secondary z-20" style="font-size: 48px; font-variation-settings: 'FILL' 1;">shield_locked</span>
+</div>
+<h2 class="font-headline-1 text-headline-1 text-on-surface mb-stack-sm">ระบบปกป้องข้อมูลทำงานอยู่</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[280px]">ข้อมูลสุขภาพของคนที่คุณรักถูกเข้ารหัสและจัดเก็บอย่างปลอดภัยตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล (PDPA)</p>
+</section>
+<!-- การควบคุมความเป็นส่วนตัว -->
+<section class="mb-stack-lg">
+<h3 class="font-label-caps text-label-caps text-outline mb-stack-sm ml-unit uppercase tracking-wider">การควบคุมความเป็นส่วนตัว</h3>
+<div class="bg-surface-container-lowest rounded-xl fluent-shadow flex flex-col overflow-hidden">
+<!-- Toggle 1 -->
+<div class="flex items-center justify-between p-stack-md border-b border-surface-variant">
+<div class="pr-4">
+<h4 class="font-body-lg text-body-lg text-on-surface mb-1">จัดเก็บข้อมูลในประเทศ</h4>
+<p class="font-caption text-caption text-on-surface-variant">(ภูมิภาคประเทศไทย)</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-secondary appearance-none cursor-pointer z-10 transition-all duration-300 right-0" id="toggle1" name="toggle1" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-secondary cursor-pointer transition-colors duration-300" for="toggle1"></label>
+</div>
+</div>
+<!-- Toggle 2 -->
+<div class="flex items-center justify-between p-stack-md border-b border-surface-variant">
+<div class="pr-4">
+<h4 class="font-body-lg text-body-lg text-on-surface mb-1">Differential Privacy สำหรับ AI</h4>
+<p class="font-caption text-caption text-on-surface-variant">ทำให้ข้อมูลไม่ระบุตัวตนก่อนวิเคราะห์</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-secondary appearance-none cursor-pointer z-10 transition-all duration-300 right-0" id="toggle2" name="toggle2" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-secondary cursor-pointer transition-colors duration-300" for="toggle2"></label>
+</div>
+</div>
+<!-- Toggle 3 -->
+<div class="flex items-center justify-between p-stack-md">
+<div class="pr-4">
+<h4 class="font-body-lg text-body-lg text-on-surface mb-1">การเข้ารหัสแบบ End-to-End</h4>
+<p class="font-caption text-caption text-on-surface-variant">รักษาความปลอดภัยช่องทางการสื่อสาร</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-secondary appearance-none cursor-pointer z-10 transition-all duration-300 right-0" id="toggle3" name="toggle3" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-secondary cursor-pointer transition-colors duration-300" for="toggle3"></label>
+</div>
+</div>
+</div>
+</section>
+<!-- บันทึกการเข้าถึงข้อมูล Preview -->
+<section>
+<h3 class="font-label-caps text-label-caps text-outline mb-stack-sm ml-unit uppercase tracking-wider">บันทึกการเข้าถึงข้อมูล</h3>
+<div class="bg-surface-container/50 backdrop-blur-sm rounded-xl p-stack-md fluent-shadow border border-surface-variant">
+<div class="flex items-center gap-3 mb-stack-md pb-stack-sm border-b border-surface-variant/50">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-size: 18px;">smart_toy</span>
+</div>
+<div class="flex-1">
+<h5 class="font-body-md text-body-md text-on-surface font-semibold">ตรวจสุขภาพอัตโนมัติโดย AI</h5>
+<p class="font-caption text-caption text-on-surface-variant">Today, 08:30 AM</p>
+</div>
+<span class="font-caption text-caption text-secondary font-medium">อนุญาตแล้ว</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">history</span>
+</div>
+<div class="flex-1">
+<h5 class="font-body-md text-body-md text-on-surface font-semibold">สร้างรายงานประจำสัปดาห์</h5>
+<p class="font-caption text-caption text-on-surface-variant">Yesterday, 23:00 PM</p>
+</div>
+<span class="font-caption text-caption text-secondary font-medium">อนุญาตแล้ว</span>
+</div>
+<button class="w-full mt-stack-md pt-stack-sm border-t border-surface-variant/50 text-tertiary font-body-md text-body-md font-semibold text-center hover:opacity-80 transition-opacity">
+                    ดูบันทึกทั้งหมด
+                </button>
+</div>
+</section>
+</main>
+</body></html>

@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Care-Jai - Action Alert</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-primary-container": "#554300",
+                "surface-tint": "#735c00",
+                "inverse-primary": "#e9c349",
+                "secondary": "#3b6934",
+                "primary-fixed": "#ffe088",
+                "on-primary-fixed-variant": "#574500",
+                "on-primary": "#ffffff",
+                "background": "#fdf8f6",
+                "on-surface": "#1c1b1a",
+                "on-tertiary-container": "#254188",
+                "surface-variant": "#e6e2df",
+                "primary-container": "#d4af37",
+                "on-error-container": "#93000a",
+                "tertiary": "#415ba4",
+                "surface-container": "#f1edea",
+                "surface-bright": "#fdf8f6",
+                "tertiary-fixed": "#dbe1ff",
+                "on-surface-variant": "#4d4635",
+                "surface-container-highest": "#e6e2df",
+                "error": "#ba1a1a",
+                "secondary-fixed": "#bcf0ae",
+                "inverse-surface": "#31302e",
+                "on-error": "#ffffff",
+                "error-container": "#ffdad6",
+                "on-tertiary": "#ffffff",
+                "secondary-fixed-dim": "#a1d494",
+                "on-tertiary-fixed": "#00174b",
+                "primary": "#735c00",
+                "secondary-container": "#b9eeab",
+                "on-tertiary-fixed-variant": "#27438a",
+                "on-background": "#1c1b1a",
+                "inverse-on-surface": "#f4f0ed",
+                "on-secondary": "#ffffff",
+                "on-secondary-container": "#3f6d38",
+                "surface-dim": "#ddd9d6",
+                "surface-container-lowest": "#ffffff",
+                "outline": "#7f7663",
+                "surface-container-high": "#ece7e4",
+                "tertiary-container": "#97b0ff",
+                "on-primary-fixed": "#241a00",
+                "surface": "#fdf8f6",
+                "tertiary-fixed-dim": "#b4c5ff",
+                "on-secondary-fixed": "#002201",
+                "primary-fixed-dim": "#e9c349",
+                "surface-container-low": "#f7f3f0",
+                "outline-variant": "#d0c5af",
+                "on-secondary-fixed-variant": "#23501e"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "stack-sm": "8px",
+                "stack-md": "16px",
+                "gutter": "12px",
+                "stack-lg": "24px",
+                "unit": "4px",
+                "margin-page": "20px"
+        },
+        "fontFamily": {
+                "display": [
+                        "Inter"
+                ],
+                "headline-2": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "label-caps": [
+                        "Inter"
+                ],
+                "caption": [
+                        "Inter"
+                ],
+                "headline-1": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "display": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-2": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "15px",
+                        {
+                                "lineHeight": "22px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "caption": [
+                        "13px",
+                        {
+                                "lineHeight": "18px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-1": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "17px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.on-background');
+  }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col items-center justify-center font-body-md text-body-md">
+<!-- Mobile Container -->
+<main class="w-full max-w-md mx-auto bg-surface min-h-screen sm:min-h-[800px] sm:shadow-[0_8px_30px_rgba(0,0,0,0.12)] sm:rounded-3xl relative flex flex-col overflow-hidden border border-surface-variant">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-5 py-3 bg-white/90 dark:bg-gray-900/90 docked full-width top-0 z-50 border-b border-gray-100 dark:border-gray-800 flat no-shadows">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-surface-variant">
+<img alt="Senior profile picture" class="w-full h-full object-cover" data-alt="A close-up portrait of a warm, smiling senior man with white hair and glasses, representing an elderly family member. The lighting is soft and natural, emphasizing a gentle, approachable expression. The background is slightly blurred and bright, fitting a clean, corporate modern aesthetic with a warm humanist lean. The overall mood is comforting and reliable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjeULLS0f9BAaZXhumGahAn0f2WG_BGyzITS-RnNEH45ikeRso7fkrE85B73oL9roSuMFpDxTOlGZA6dq3PF27ciFPUUpSf5x1ZkDNKpQyDeOWF_5ipyvw6-MZj7lGygxLbgAXZByMpvBUOETGB20_6fGeey1L_S_tLTS3dqvxqm_WiTuIIyJgLLeesbWY6vyBkQTN9YJ2mXO2KR5Hu8h5fwCfVyb9KNatLfaxV60XbrRlHBVrqmPfwIk_sN7M6THWYgPGVsaqBg"/>
+</div>
+<h1 class="text-xl font-bold text-yellow-600 dark:text-yellow-500 font-sans tracking-tight">Care-Jai</h1>
+</div>
+<button class="text-yellow-600 dark:text-yellow-500 hover:opacity-80 transition-opacity tap-highlight-none active:opacity-70 p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">emergency_share</span>
+</button>
+</header>
+<!-- Content Area -->
+<div class="flex-1 flex flex-col px-margin-page py-stack-lg gap-stack-lg overflow-y-auto">
+<!-- Profile Context -->
+<section class="flex flex-col items-center pt-4">
+<div class="relative">
+<div class="w-32 h-32 rounded-full overflow-hidden border-4 border-inverse-primary shadow-[0_4px_24px_rgba(233,195,73,0.3)]">
+<img alt="Grandpa Profile" class="w-full h-full object-cover" data-alt="A portrait of a kind-looking elderly man with silver hair and a gentle smile. He is wearing a comfortable, casual sweater. The lighting is soft, warm, and inviting, creating a sense of care and familiarity. The image fits perfectly within a light-mode, modern UI designed to evoke trust and emotional well-being." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4HchwT2-FtZNILvhSNA7bsOIo3TVXefHYXgwCye_l69W4Y__K3XictpEUFxpeQ4sMPcBBaxNJQ3UMRPqvnFFWl0woRxgNa0HxocjFdnKjuZuRtNye-MWInikttkilZNe6DRJ1pQrv_5Ed8xYnpJub2wHs43pRsnIU9q641y1RTUOMbIQWUiYULX_HE2VXZ3JvxrAueKyUQNuPd0Uzc_iDn0y5S1OHFfqZkVlbHLCP1frCVpVqBO9exu-8lXiipjutSEj8uFJuEg"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-surface rounded-full p-1 shadow-sm">
+<div class="bg-inverse-primary text-on-primary-container rounded-full w-10 h-10 flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+</div>
+</div>
+<h2 class="font-headline-1 text-headline-1 mt-stack-md text-on-surface">คุณปู่</h2>
+<p class="font-body-md text-body-md text-on-surface-variant text-center mt-unit">ตรวจพบความผิดปกติในกิจวัตร</p>
+</section>
+<!-- AI Summary Box -->
+<section class="bg-surface-container rounded-2xl p-stack-md border-l-4 border-inverse-primary shadow-[0_4px_12px_rgba(0,0,0,0.04)] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3 opacity-10">
+<span class="material-symbols-outlined text-4xl text-primary">psychology</span>
+</div>
+<div class="flex items-start gap-3 relative z-10">
+<span class="material-symbols-outlined text-inverse-primary mt-1" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<div>
+<h3 class="font-headline-2 text-headline-2 text-on-surface mb-stack-sm">ข้อมูลเชิงลึกจาก AI</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              คุณปู่ยังไม่ได้เปิดกล่องยา และเสียงพูดตอนเช้าแสดงอาการเหนื่อยล้าเล็กน้อย
+            </p>
+</div>
+</div>
+</section>
+<!-- Spacer to push buttons to bottom -->
+<div class="flex-1 min-h-[40px]"></div>
+<!-- Action Buttons -->
+<section class="flex flex-col gap-stack-md mt-auto pb-stack-lg">
+<button class="w-full h-14 bg-primary text-on-primary rounded-xl font-headline-2 text-[16px] flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(115,92,0,0.2)] hover:bg-surface-tint transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
+          เริ่มโทรสาย
+        </button>
+<button class="w-full h-14 bg-primary-container text-on-primary-container rounded-xl font-headline-2 text-[16px] flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(0,0,0,0.04)] hover:bg-primary-fixed transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">record_voice_over</span>
+          ส่งเสียงเตือนอัตโนมัติจาก AI
+        </button>
+<button class="w-full h-14 bg-transparent border-2 border-outline text-on-surface-variant rounded-xl font-headline-2 text-[16px] flex items-center justify-center gap-2 hover:bg-surface-container transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined">close</span>
+          สัญญาณผิดพลาด / ปิด
+        </button>
+</section>
+</div>
+</main>
+</body></html>

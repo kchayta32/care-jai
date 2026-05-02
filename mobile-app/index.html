@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Care-Jai Demo 🌸</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --gold: #d4af37;
+            --gold-dark: #735c00;
+            --green: #3b6934;
+            --bg: #fdf8f6;
+            --surface: #ffffff;
+            --text: #1c1b1a;
+            --text-muted: #4d4635;
+            --border: #e6e2df
+        }
+
+        body {
+            font-family: 'Noto Sans Thai', 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column
+        }
+
+        .header {
+            background: linear-gradient(135deg, #735c00 0%, #d4af37 50%, #e9c349 100%);
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+            letter-spacing: -0.02em
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 0;
+            background: var(--surface);
+            border-bottom: 2px solid var(--border);
+            overflow-x: auto;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04)
+        }
+
+        .nav-tabs button {
+            flex: none;
+            padding: 1rem 1.5rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: .85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            transition: all .2s
+        }
+
+        .nav-tabs button:hover {
+            background: #f7f3f0;
+            color: var(--gold-dark)
+        }
+
+        .nav-tabs button.active {
+            color: var(--gold-dark);
+            border-bottom-color: var(--gold);
+            font-weight: 600
+        }
+
+        .screen-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: #f1edea
+        }
+
+        .phone-frame {
+            width: 393px;
+            height: 852px;
+            background: var(--surface);
+            border-radius: 2.5rem;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+            position: relative
+        }
+
+        .phone-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 28px;
+            background: #000;
+            border-radius: 0 0 20px 20px;
+            z-index: 10
+        }
+
+        .info-panel {
+            max-width: 320px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem
+        }
+
+        .info-card {
+            background: var(--surface);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04)
+        }
+
+        .info-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: .5rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem
+        }
+
+        .info-card p {
+            font-size: .85rem;
+            color: var(--text-muted);
+            line-height: 1.6
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: .7rem;
+            font-weight: 600
+        }
+
+        .badge-gold {
+            background: #ffe088;
+            color: #574500
+        }
+
+        .badge-green {
+            background: #bcf0ae;
+            color: #23501e
+        }
+
+        .badge-blue {
+            background: #dbe1ff;
+            color: #254188
+        }
+
+        @media(max-width:900px) {
+            .info-panel {
+                display: none
+            }
+
+            .screen-container {
+                padding: .5rem
+            }
+
+            .phone-frame {
+                width: 100%;
+                height: 85vh;
+                border-radius: 0;
+                box-shadow: none
+            }
+
+            .phone-notch {
+                display: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>🌸 Care-Jai Demo</h1>
+        <p>ระบบดูแลผู้สูงอายุอัจฉริยะ ที่ผสานเทคโนโลยี AI เข้ากับความห่วงใยของครอบครัว</p>
+    </div>
+
+    <div class="nav-tabs" id="tabs">
+        <button class="active" onclick="show('caregiver1')">🏠 แดชบอร์ดหลัก</button>
+        <button onclick="show('caregiver2')">📊 สัญญาณชีพ</button>
+        <button onclick="show('health')">💓 สุขภาพ & อารมณ์</button>
+        <button onclick="show('routine')">🧘 กิจวัตรสุขภาพ</button>
+        <button onclick="show('escalation')">⚠️ แจ้งเตือนฉุกเฉิน</button>
+        <button onclick="show('privacy')">🔒 ความเป็นส่วนตัว</button>
+        <button onclick="show('companion')">🤖 AI สำหรับผู้สูงอายุ</button>
+        <button onclick="show('mobile')">📱 แอปมือถือ (Thai)</button>
+    </div>
+
+    <div style="display:flex;flex:1">
+        <div class="screen-container">
+            <div class="phone-frame">
+                <div class="phone-notch"></div>
+                <iframe id="screenFrame" src="screens/caregiver1.html"></iframe>
+            </div>
+        </div>
+        <div class="info-panel" id="infoPanel">
+            <div class="info-card">
+                <h3><span class="material-symbols-outlined" style="color:var(--gold)">info</span> เกี่ยวกับหน้าจอนี้
+                </h3>
+                <p id="infoText">แดชบอร์ดหลักสำหรับผู้ดูแล แสดงการแจ้งเตือนจาก AI เมื่อตรวจพบความผิดปกติ
+                    พร้อมกราฟแนวโน้มสุขภาพ</p>
+            </div>
+            <div class="info-card">
+                <h3><span class="material-symbols-outlined" style="color:var(--green)">bolt</span> เทคโนโลยี</h3>
+                <p id="techText"><span class="badge badge-gold">Azure OpenAI</span> <span class="badge badge-green">IoT
+                        Sensors</span> <span class="badge badge-blue">PDPA Compliance</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const screens = {
+            caregiver1: { src: 'screens/caregiver1.html', info: 'แดชบอร์ดหลักสำหรับผู้ดูแล แสดงการแจ้งเตือนจาก AI เมื่อตรวจพบความผิดปกติ เช่น ลืมกินยา พร้อมปุ่มดำเนินการด่วน', tech: 'AI Anomaly Detection, Proactive Alerts' },
+            caregiver2: { src: 'screens/caregiver2.html', info: 'แดชบอร์ดขยาย แสดงข้อมูลสัญญาณชีพ ได้แก่ อัตราหัวใจเต้น, SpO2, คุณภาพการนอน พร้อมกราฟแนวโน้ม', tech: 'Real-time Vitals, Health Watch Integration' },
+            health: { src: 'screens/health.html', info: 'วิเคราะห์อารมณ์ด้วย AI จากเสียงพูด, ข้อมูลจากอุปกรณ์ IoT ที่เชื่อมต่อ และข้อมูลเชิงลึกเชิงป้องกัน', tech: 'Voice Sentiment Analysis, Azure IoT Hub' },
+            routine: { src: 'screens/routine.html', info: 'ตารางกิจวัตรประจำวัน Timeline แบบ Thai Wellness พร้อมคำแนะนำ AI เช่น ฤๅษีดัดตน', tech: 'Thai Traditional Wellness, Personalized AI' },
+            escalation: { src: 'screens/escalation.html', info: 'หน้าจอแจ้งเตือนฉุกเฉิน เมื่อ AI ตรวจพบความผิดปกติร้ายแรง พร้อมตัวเลือกโทรหา หรือส่ง AI Voice Reminder', tech: 'Escalation Flow, Voice AI Reminder' },
+            privacy: { src: 'screens/privacy.html', info: 'ตั้งค่าความเป็นส่วนตัว รองรับ PDPA, เข้ารหัสแบบ End-to-End, Differential Privacy สำหรับ AI', tech: 'PDPA Compliance, E2E Encryption' },
+            companion: { src: 'screens/companion.html', info: 'หน้าจอสำหรับผู้สูงอายุ ใช้งานง่าย ปุ่มใหญ่ มี AI Voice Orb สำหรับสนทนา', tech: 'Empathetic AI, Voice-First UX' },
+            mobile: { src: 'screens/mobile-app.html', info: 'แอปมือถือฉบับภาษาไทย รวมทั้งโหมดผู้ดูแลและโหมดผู้สูงอายุ', tech: 'React Demo, Thai Localization' }
+        };
+        function show(id) {
+            const s = screens[id];
+            document.getElementById('screenFrame').src = s.src;
+            document.getElementById('infoText').textContent = s.info;
+            document.getElementById('techText').innerHTML = s.tech;
+            document.querySelectorAll('.nav-tabs button').forEach((b, i) => { b.classList.remove('active') });
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

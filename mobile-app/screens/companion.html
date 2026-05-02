@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Care-Jai Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#554300",
+                    "surface-tint": "#735c00",
+                    "inverse-primary": "#e9c349",
+                    "secondary": "#3b6934",
+                    "primary-fixed": "#ffe088",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-primary": "#ffffff",
+                    "background": "#fdf8f6",
+                    "on-surface": "#1c1b1a",
+                    "on-tertiary-container": "#254188",
+                    "surface-variant": "#e6e2df",
+                    "primary-container": "#d4af37",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#415ba4",
+                    "surface-container": "#f1edea",
+                    "surface-bright": "#fdf8f6",
+                    "tertiary-fixed": "#dbe1ff",
+                    "on-surface-variant": "#4d4635",
+                    "surface-container-highest": "#e6e2df",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#bcf0ae",
+                    "inverse-surface": "#31302e",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#a1d494",
+                    "on-tertiary-fixed": "#00174b",
+                    "primary": "#735c00",
+                    "secondary-container": "#b9eeab",
+                    "on-tertiary-fixed-variant": "#27438a",
+                    "on-background": "#1c1b1a",
+                    "inverse-on-surface": "#f4f0ed",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#3f6d38",
+                    "surface-dim": "#ddd9d6",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#7f7663",
+                    "surface-container-high": "#ece7e4",
+                    "tertiary-container": "#97b0ff",
+                    "on-primary-fixed": "#241a00",
+                    "surface": "#fdf8f6",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "on-secondary-fixed": "#002201",
+                    "primary-fixed-dim": "#e9c349",
+                    "surface-container-low": "#f7f3f0",
+                    "outline-variant": "#d0c5af",
+                    "on-secondary-fixed-variant": "#23501e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px",
+                    "2xl": "1rem"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "gutter": "12px",
+                    "stack-lg": "24px",
+                    "unit": "4px",
+                    "margin-page": "20px"
+            },
+            "fontFamily": {
+                    "display": ["Inter", "sans-serif"],
+                    "headline-2": ["Inter", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "label-caps": ["Inter", "sans-serif"],
+                    "caption": ["Inter", "sans-serif"],
+                    "headline-1": ["Inter", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+                    "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "caption": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "headline-1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "super-display": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            },
+            "boxShadow": {
+                    "soft": "0 4px 12px rgba(0,0,0,0.04)",
+                    "elevated": "0 8px 24px rgba(0,0,0,0.08)",
+                    "orb-glow": "0 0 60px rgba(212, 175, 55, 0.4), inset 0 0 30px rgba(255, 255, 255, 0.8)"
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { background-color: #fdf8f6; } /* fallback for older browsers */
+        .orb-gradient {
+            background: radial-gradient(circle at 30% 30%, #ffffff 0%, #ffe088 40%, #d4af37 80%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopAppBar JSON Start -->
+<header class="docked full-width top-0 z-50 flex justify-between items-center w-full px-5 py-3 bg-white/90 dark:bg-gray-900/90 border-b border-gray-100 dark:border-gray-800 flat no-shadows tap-highlight-none active:opacity-70">
+<div class="flex items-center gap-gutter hover:opacity-80 transition-opacity">
+<img alt="Senior profile picture" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="A close-up portrait of a cheerful elderly woman with silver hair, wearing a soft pastel blouse. The lighting is warm and natural, creating a welcoming and friendly mood. The image fits within a bright, modern, warm humanist UI aesthetic, emphasizing empathetic care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQoOfXql_RiS3qfAd0lHC2fSM5P6A3xYVZz6WPsXljYLZ2ZxYGKA2pye-QQlL9c0wcaGrF0zt9zEI2XD3xkw0aib41RAcxNHrV8jCpJS9JNgrd42pD8ycQgENDUgJ4vimEFMtvWMLrhOD6yHSMn_x1ykytpm6iA7FzSDTS5ZnV1eipWQ-QYN6eDgZYr29KYa9GFEUYpJJ1lhDzk68k9Q2jZkXu0uN5E_VVZsfQ77vAfbwFgdwfAsu84bMq0E4CDOGWElNBbXcbww"/>
+<h1 class="font-headline-1 text-headline-1 text-yellow-600 dark:text-yellow-500 text-xl font-bold tracking-tight">Care-Jai</h1>
+</div>
+<button aria-label="Emergency Share" class="w-10 h-10 flex items-center justify-center rounded-full bg-error-container text-on-error-container hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">emergency_share</span>
+</button>
+</header>
+<!-- TopAppBar JSON End -->
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col items-center justify-center px-margin-page pb-[100px] gap-stack-lg w-full max-w-md mx-auto">
+<!-- Greeting -->
+<div class="text-center w-full px-4 mt-stack-md">
+<h2 class="font-display text-[40px] leading-[48px] tracking-tight font-bold text-on-surface mb-stack-sm">สวัสดีค่ะ,</h2>
+<p class="font-headline-1 text-headline-1 text-on-surface-variant">วันนี้รู้สึกอย่างไรบ้างคะ?</p>
+</div>
+<!-- AI Voice Assistant Orb (The Focal Point) -->
+<div class="relative w-64 h-64 flex items-center justify-center my-stack-md group cursor-pointer">
+<!-- Outer Glow / Ripple Effect -->
+<div class="absolute inset-0 rounded-full bg-primary-fixed opacity-30 scale-110"></div>
+<div class="absolute inset-4 rounded-full bg-primary-fixed-dim opacity-50 scale-105"></div>
+<!-- Core Orb -->
+<div class="relative w-48 h-48 rounded-full orb-gradient shadow-orb-glow flex items-center justify-center z-10 transition-transform group-hover:scale-105 group-active:scale-95 duration-300">
+<span class="material-symbols-outlined text-[64px] text-on-primary-container opacity-80">mic</span>
+</div>
+<!-- Optional: Spark/Listening Indicator -->
+<div class="absolute top-4 right-4 z-20">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">colors_spark</span>
+</div>
+</div>
+<!-- Quick Reply Buttons (Extremely Accessible) -->
+<div class="w-full flex flex-col gap-stack-md px-2">
+<!-- Primary Action: Good -->
+<button class="w-full h-[72px] bg-secondary-fixed text-on-secondary-fixed rounded-2xl flex items-center px-6 shadow-soft hover:bg-secondary-fixed-dim transition-colors tap-highlight-none active:scale-[0.98]">
+<div class="w-12 h-12 rounded-full bg-white/40 flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">sentiment_satisfied</span>
+</div>
+<span class="font-headline-2 text-headline-2 flex-1 text-left">สบายดีค่ะ</span>
+</button>
+<!-- Secondary Action: Tired -->
+<button class="w-full h-[72px] bg-surface-container-high text-on-surface rounded-2xl flex items-center px-6 shadow-soft hover:bg-surface-variant transition-colors tap-highlight-none active:scale-[0.98]">
+<div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-4 shadow-sm">
+<span class="material-symbols-outlined text-3xl text-on-surface-variant">bedtime</span>
+</div>
+<span class="font-headline-2 text-headline-2 flex-1 text-left">เหนื่อยนิดหน่อย</span>
+</button>
+<!-- Tertiary/Important Action: โทรหาลูกหลาน -->
+<button class="w-full h-[72px] bg-tertiary-fixed text-on-tertiary-fixed rounded-2xl flex items-center px-6 shadow-soft hover:bg-tertiary-fixed-dim transition-colors tap-highlight-none active:scale-[0.98] border border-tertiary-container/30">
+<div class="w-12 h-12 rounded-full bg-white/50 flex items-center justify-center mr-4">
+<span class="material-symbols-outlined text-3xl text-tertiary">group</span>
+</div>
+<span class="font-headline-2 text-headline-2 flex-1 text-left">โทรหาลูกหลาน</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar JSON Start -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-t-2xl border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] md:hidden">
+<!-- Active Nav Item -->
+<a class="flex flex-col items-center justify-center text-yellow-700 dark:text-yellow-400 bg-yellow-50 dark:bg-yellow-900/30 rounded-xl px-3 py-1 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 1;">หน้าแรก</span>
+<span class="font-sans text-[11px] font-medium tracking-tight">หน้าแรก</span>
+</a>
+<!-- Inactive Nav Items -->
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors rounded-xl px-3 py-1 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">spa</span>
+<span class="font-sans text-[11px] font-medium tracking-tight">สุขภาพดี</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors rounded-xl px-3 py-1 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">monitoring</span>
+<span class="font-sans text-[11px] font-medium tracking-tight">สุขภาพ</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors rounded-xl px-3 py-1 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">notifications</span>
+<span class="font-sans text-[11px] font-medium tracking-tight">แจ้งเตือน</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors rounded-xl px-3 py-1 scale-95 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">ตั้งค่า</span>
+<span class="font-sans text-[11px] font-medium tracking-tight">ตั้งค่า</span>
+</a>
+</nav>
+<!-- BottomNavBar JSON End -->
+</body></html>

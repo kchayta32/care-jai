@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ข้อมูลเชิงลึก สุขภาพ & อารมณ์ - Care-Jai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#554300",
+                      "surface-tint": "#735c00",
+                      "inverse-primary": "#e9c349",
+                      "secondary": "#3b6934",
+                      "primary-fixed": "#ffe088",
+                      "on-primary-fixed-variant": "#574500",
+                      "on-primary": "#ffffff",
+                      "background": "#fdf8f6",
+                      "on-surface": "#1c1b1a",
+                      "on-tertiary-container": "#254188",
+                      "surface-variant": "#e6e2df",
+                      "primary-container": "#d4af37",
+                      "on-error-container": "#93000a",
+                      "tertiary": "#415ba4",
+                      "surface-container": "#f1edea",
+                      "surface-bright": "#fdf8f6",
+                      "tertiary-fixed": "#dbe1ff",
+                      "on-surface-variant": "#4d4635",
+                      "surface-container-highest": "#e6e2df",
+                      "error": "#ba1a1a",
+                      "secondary-fixed": "#bcf0ae",
+                      "inverse-surface": "#31302e",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed-dim": "#a1d494",
+                      "on-tertiary-fixed": "#00174b",
+                      "primary": "#735c00",
+                      "secondary-container": "#b9eeab",
+                      "on-tertiary-fixed-variant": "#27438a",
+                      "on-background": "#1c1b1a",
+                      "inverse-on-surface": "#f4f0ed",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-container": "#3f6d38",
+                      "surface-dim": "#ddd9d6",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#7f7663",
+                      "surface-container-high": "#ece7e4",
+                      "tertiary-container": "#97b0ff",
+                      "on-primary-fixed": "#241a00",
+                      "surface": "#fdf8f6",
+                      "tertiary-fixed-dim": "#b4c5ff",
+                      "on-secondary-fixed": "#002201",
+                      "primary-fixed-dim": "#e9c349",
+                      "surface-container-low": "#f7f3f0",
+                      "outline-variant": "#d0c5af",
+                      "on-secondary-fixed-variant": "#23501e",
+                      "warm-gold-primary": "#d4af37",
+                      "warm-gold-muted": "#f7f3f0",
+                      "calm-green-surface": "#e8f5e9",
+                      "calm-green-indicator": "#2e7d32",
+                      "yellow-alert-proactive": "#ffb300"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "2xl": "1rem"
+              },
+              "spacing": {
+                      "stack-sm": "8px",
+                      "stack-md": "16px",
+                      "gutter": "12px",
+                      "stack-lg": "24px",
+                      "unit": "4px",
+                      "margin-page": "20px"
+              },
+              "fontFamily": {
+                      "display": ["Inter"],
+                      "headline-2": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "caption": ["Inter"],
+                      "headline-1": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-2": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "caption": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "headline-1": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-lg": ["17px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fluent-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+        .fluent-shadow-hover:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 z-50 bg-white/90 dark:bg-gray-900/90 border-b border-gray-100 dark:border-gray-800 flat no-shadows sticky">
+<div class="flex justify-between items-center w-full px-5 py-3">
+<div class="flex items-center gap-3">
+<img alt="Senior profile picture" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="A close up portrait of an elegant senior woman with white hair smiling warmly. Soft, flattering natural light. She is wearing a soft pastel blouse. The background is a gently blurred, bright modern home interior. The image conveys professional empathy and a warm, human connection suitable for a family caregiving app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoSioaO14wkonHi8y4Sn9v_02UtOltU83by5UhTq3gBk-r70WD3WvTod2R8zzG2G3bZ-NW12Td5ke85Z65kM1pXdOGztMkDGVClhYGYNe068e68Q5BY3xiKRIg9IKl_bt1_uVaH6c4mVm4lqdbweDMw2NSl5P0hPklwSG9vWiXJDGFtwhgbTthr55UcOV6jspRwW6c5oJwIzeYev1OPM06vQFq6XPdFExVGxSNgRPIHQTXw39-9DdnALpeUBTAdpkIVe_nN3u2rg"/>
+<span class="text-xl font-bold text-yellow-600 dark:text-yellow-500 font-display text-display text-primary">Care-Jai</span>
+</div>
+<button class="hover:opacity-80 transition-opacity tap-highlight-none active:opacity-70 p-2 rounded-full hover:bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="emergency_share">emergency_share</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin-page py-stack-lg space-y-stack-lg max-w-4xl mx-auto w-full pb-32">
+<!-- Header Section -->
+<div>
+<h1 class="font-headline-1 text-headline-1 text-on-surface">ข้อมูลเชิงลึก สุขภาพ & อารมณ์</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">ภาพรวมแบบเรียลไทม์</p>
+</div>
+<!-- AI วิเคราะห์อารมณ์ (Bento Card 1) -->
+<section class="bg-surface-container-lowest rounded-xl fluent-shadow p-6 border border-surface-variant relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary" data-icon="psychology">psychology</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h2 class="font-headline-2 text-headline-2 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="record_voice_over" data-weight="fill" style="font-variation-settings: 'FILL' 1;">record_voice_over</span>
+                        AI วิเคราะห์อารมณ์
+                    </h2>
+<p class="font-caption text-caption text-on-surface-variant mt-1">จากการวิเคราะห์เสียงพูดล่าสุด</p>
+</div>
+<div class="bg-calm-green-surface px-3 py-1 rounded-full flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-calm-green-indicator animate-pulse"></div>
+<span class="font-label-caps text-label-caps text-calm-green-indicator">สถานะปัจจุบัน: คงที่</span>
+</div>
+</div>
+<!-- Waveform Graphic Simulation -->
+<div class="h-24 mt-6 bg-surface-container rounded-lg border border-outline-variant flex items-center justify-center relative overflow-hidden" data-alt="A detailed, abstract digital illustration of a voice sentiment waveform. The waveform consists of smooth, glowing, intertwined lines in shades of soft gold, warm yellow, and gentle green against a very pale, almost white background. The lines undulate calmly, signifying a stable, peaceful mood. The overall aesthetic is highly modern, polished, and technological yet warm and inviting, fitting for a premium healthcare application.">
+<img alt="Waveform texture" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply" data-alt="A detailed, abstract digital illustration of a voice sentiment waveform. The waveform consists of smooth, glowing, intertwined lines in shades of soft gold, warm yellow, and gentle green against a very pale, almost white background. The lines undulate calmly, signifying a stable, peaceful mood. The overall aesthetic is highly modern, polished, and technological yet warm and inviting, fitting for a premium healthcare application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuYZWaOwCnlYfz21pIrFLhsJdvwdX3qkeTMpMkUYrd98qIV9qK_tX8tUMzrkc9SVRzEALXXuYkKgatZwTCudQzolNYsEcDWhS6DIKLybyMR1uSfqSn93CMZ616Pz5R48ad2leDib4OnrQoZgUpfkorJNJRmMRYXeIz5CiTgBGm1ybGU7CKCgJG_NjHTlWsoK1-iJWvRtySsE52vvUfbET59pONA2z8PtU8MMZ3yHo3WngC-lxTwHP8Sbvx_D8XFOwZFjMOoXZcgA"/>
+<div class="z-10 flex gap-1 items-end h-12 opacity-80">
+<div class="w-1.5 bg-primary rounded-t h-4"></div>
+<div class="w-1.5 bg-primary rounded-t h-8"></div>
+<div class="w-1.5 bg-primary rounded-t h-6"></div>
+<div class="w-1.5 bg-primary rounded-t h-10"></div>
+<div class="w-1.5 bg-primary rounded-t h-7"></div>
+<div class="w-1.5 bg-primary rounded-t h-12"></div>
+<div class="w-1.5 bg-primary rounded-t h-9"></div>
+<div class="w-1.5 bg-primary rounded-t h-5"></div>
+<div class="w-1.5 bg-primary rounded-t h-8"></div>
+<div class="w-1.5 bg-primary rounded-t h-4"></div>
+</div>
+</div>
+<div class="mt-4 flex gap-4">
+<div class="flex-1 bg-surface-container-low p-3 rounded-lg border border-surface-variant">
+<span class="font-caption text-caption text-on-surface-variant block mb-1">น้ำเสียง</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">สงบ & ชัดเจน</span>
+</div>
+<div class="flex-1 bg-surface-container-low p-3 rounded-lg border border-surface-variant">
+<span class="font-caption text-caption text-on-surface-variant block mb-1">จังหวะการพูด</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">ปกติ</span>
+</div>
+</div>
+</section>
+<!-- Connected Devices (Bento Grid) -->
+<section>
+<h2 class="font-headline-2 text-headline-2 text-on-surface mb-stack-md flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="router" data-weight="fill" style="font-variation-settings: 'FILL' 1;">router</span>
+                อุปกรณ์ที่เชื่อมต่อ (Azure IoT)
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- Smart Watch Card -->
+<div class="bg-surface-container-lowest rounded-xl fluent-shadow-hover p-5 border border-surface-variant flex items-center justify-between transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined" data-icon="watch">watch</span>
+</div>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface font-semibold">นาฬิกาสุขภาพ Pro</h3>
+<p class="font-caption text-caption text-on-surface-variant">อัตราหัวใจ: 72 bpm | O2: 98%</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-calm-green-indicator shadow-[0_0_8px_rgba(46,125,50,0.4)]"></div>
+<span class="font-caption text-caption text-calm-green-indicator font-medium">ใช้งานอยู่</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant text-[10px] mt-1">ซิงค์: เมื่อสักครู่</span>
+</div>
+</div>
+<!-- Motion Sensor Card -->
+<div class="bg-surface-container-lowest rounded-xl fluent-shadow-hover p-5 border border-surface-variant flex items-center justify-between transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+</div>
+<div>
+<h3 class="font-body-md text-body-md text-on-surface font-semibold">เซ็นเซอร์ห้องนั่งเล่น</h3>
+<p class="font-caption text-caption text-on-surface-variant">ตรวจพบการเคลื่อนไหว 5 นาทีก่อน</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-calm-green-indicator shadow-[0_0_8px_rgba(46,125,50,0.4)]"></div>
+<span class="font-caption text-caption text-calm-green-indicator font-medium">ใช้งานอยู่</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant text-[10px] mt-1">แบตเตอรี่: 85%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ข้อมูลเชิงลึก AI เชิงป้องกัน (Specialized Component) -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.08)] p-6 border-l-4 border-yellow-alert-proactive relative overflow-hidden">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed" data-icon="tips_and_updates" data-weight="fill" style="font-variation-settings: 'FILL' 1;">tips_and_updates</span>
+</div>
+<div>
+<h2 class="font-headline-2 text-headline-2 text-on-surface flex items-center gap-2">
+                        ข้อมูลเชิงลึก AI เชิงป้องกัน
+                        <span class="bg-yellow-100 text-yellow-800 text-[10px] px-2 py-0.5 rounded uppercase tracking-wider font-bold">ใหม่</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+                        Based on the combined data from the <strong class="text-on-surface">นาฬิกาสุขภาพ Pro</strong> (slight decrease in deep sleep over 3 days) and the <strong class="text-on-surface">เซ็นเซอร์ห้องนั่งเล่น</strong> (increased nighttime movement), our AI anticipates a potential minor fatigue trend today.
+                    </p>
+<div class="mt-4 bg-surface p-4 rounded-lg border border-outline-variant flex gap-3 items-center">
+<span class="material-symbols-outlined text-primary" data-icon="local_cafe">local_cafe</span>
+<p class="font-caption text-caption text-on-surface">Suggestion: Encourage a short afternoon rest and ensure adequate hydration.</p>
+</div>
+<button class="mt-5 bg-primary text-on-primary font-label-caps text-label-caps px-6 py-3 rounded-lg hover:bg-surface-tint transition-colors w-full sm:w-auto text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="task_alt">task_alt</span>
+                        รับทราบ & ตั้งเตือน
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-2xl border-t border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-[0_-4px_12px_rgba(0,0,0,0.04)] md:hidden">
+<div class="flex justify-around items-center px-4 pb-6 pt-2">
+<!-- Home: Inactive -->
+<button class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors scale-95 active:scale-90 transition-transform duration-150 px-3 py-1 rounded-xl">
+<span class="material-symbols-outlined mb-1" data-icon="home">หน้าแรก</span>
+<span class="font-sans text-[11px] font-medium tracking-tight">หน้าแรก</span>
+</button>
+<!-- Wellness: Inactive -->
+<button class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors scale-95 active:scale-90 transition-transform duration-150 px-3 py-1 rounded-xl">
+<span class="material-symbols-outlined mb-1" data-icon="spa">spa</span>
+<span class="font-sans text-[11px] font-medium tracking-tight">สุขภาพดี</span>
+</button>
+<!-- Health: Active (Matches Health & Mood Insights) -->
+<button class="flex flex-col items-center justify-center text-yellow-700 dark:text-yellow-400 bg-yellow-50 dark:bg-yellow-900/30 rounded-xl px-3 py-1 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors scale-95 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined mb-1" data-icon="monitoring" data-weight="fill" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<span class="font-sans text-[11px] font-medium tracking-tight">สุขภาพ</span>
+</button>
+<!-- Alerts: Inactive -->
+<button class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors scale-95 active:scale-90 transition-transform duration-150 px-3 py-1 rounded-xl">
+<span class="material-symbols-outlined mb-1" data-icon="notifications">notifications</span>
+<span class="font-sans text-[11px] font-medium tracking-tight">แจ้งเตือน</span>
+</button>
+<!-- Settings: Inactive -->
+<button class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors scale-95 active:scale-90 transition-transform duration-150 px-3 py-1 rounded-xl">
+<span class="material-symbols-outlined mb-1" data-icon="settings">ตั้งค่า</span>
+<span class="font-sans text-[11px] font-medium tracking-tight">ตั้งค่า</span>
+</button>
+</div>
+</nav>
+</body></html>
